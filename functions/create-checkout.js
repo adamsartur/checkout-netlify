@@ -26,6 +26,11 @@ exports.handler = async (event) => {
   // ensure that the quantity is within the allowed range
   const validatedQuantity = quantity > 0 && quantity < 11 ? quantity : 1;
 
+  console.log("checkout");
+  console.log("product");
+  console.log(product);
+  console.log("sku", "quantity");
+  console.log(sku, quantity);
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
     payment_method_types: ["card"],
