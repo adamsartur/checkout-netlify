@@ -98,7 +98,7 @@
         }
 
         console.log('fetch');
-        const dataResponse = await fetch('/.netlify/functions/get-products')
+        const dataResponse = await fetch('/.netlify/functions/get-product')
           .then((res) => res.json()) // return the parsed JSON data here
           .catch((err) => console.error(err));
         console.log(dataResponse);
