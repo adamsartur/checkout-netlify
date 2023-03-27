@@ -6,6 +6,7 @@
   --color6: #b25975;
   --color3: #a0ada2;
   --color4: #616a6d;
+  --color7: #dccfa6;
 }
 
 body {
@@ -58,6 +59,7 @@ section {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 #section1 {
@@ -115,7 +117,7 @@ section {
 }
 
 .card-back {
-  background-color: var(--color3);
+  background-color: var(--color7);
   color: var(--color4);
   transform: rotateY(180deg);
 }
@@ -124,4 +126,72 @@ section {
   height: 100vh;
   display: flex;
   align-items: center;
+  max-width: 35%;
+  padding-left: 15%;
+}
+
+.half-section .home {
+  color: #fff;
+  margin-top: -220px;
+  max-width: 500px;
+}
+
+.home h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+.home h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  padding-left: 25px;
+  margin-block-start: 5px !important;
+}
+
+.home h2 {
+  font-size: 1.1rem;
+  font-weight: 100;
+  letter-spacing: 4px;
+  padding-left: 25px;
+  color: #f5e5ce;
+}
+
+.home h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  padding-left: 10px;
+  color: #f5e5ce;
+}
+
+.home span {
+  font-size: 0.7rem;
+  font-weight: 100;
+  line-height: 20px;
+  display: inline-block;
+  color: #fdd5ac;
+}
+
+.stripe-button {
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 7px 15px;
+  background: #d29e78;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 25px;
+}
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
