@@ -58,12 +58,35 @@ section {
   position: relative;
   background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: center;
+  overflow: hidden;
 }
 
+#section1::before,
+#section1::after {
+  content: "";
+  background-image: url(../img/background_new.png);
+  background-position: center;
+  width: 110%;
+  height: 110%;
+  display: block;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+}
+/* the blurred image */
+#section1::before {
+  background-repeat: repeat;
+  filter: blur(20px);
+  background-size: 120%;
+}
+/* the clear image */
+#section1::after {
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
 #section1 {
-  background-image: url("../img/background.png");
+  background-image: url("../img/background_new.png");
 }
 
 #section2 {
@@ -76,70 +99,53 @@ section {
 #section3 {
   background-image: url("../img/section.png");
 }
-.card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  perspective: 1000px;
-  max-width: 30%;
-  padding-left: 15%;
-}
-
 .card {
-  width: 200px;
-  height: 300px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+  width: 400px;
+  height: auto;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-.card:hover {
-  transform: rotateY(180deg);
+.card-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
-.card-front,
-.card-back {
-  width: 100%;
-  height: 100%;
+p,
+a {
+  font-size: 1rem;
+}
+
+a {
+  color: #4d4ae8;
+  text-decoration: none;
+}
+.card {
+  /* other styles */
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.card.bot {
   position: absolute;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.card-front {
-  background-color: var(--color1);
-  color: var(--color4);
-}
-
-.card-back {
-  background-color: var(--color7);
-  color: var(--color4);
-  transform: rotateY(180deg);
-}
-
-.half-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  max-width: 35%;
-  padding-left: 15%;
-}
-
-.half-section .home {
-  color: #fff;
-  margin-top: -220px;
-  max-width: 500px;
+  bottom: 0;
+  z-index: 2;
+  left: calc(50% - 232px);
+  text-align: justify;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .home h1,
 h2,
-h3 {
+.card h3 {
   text-transform: uppercase;
+  text-align: center;
 }
 
 .home h1 {
